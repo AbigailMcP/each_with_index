@@ -55,7 +55,7 @@ My antelope is stored in cage number 2
 My bacterium is stored in cage number 3
 ```
 
-- can be used for returning all numbered objects:
+- for example, can be used for returning all even numbered objects:
 
 ```
 pets.each_with_index {|pet, index| puts pet if index%2 == 0}
@@ -64,13 +64,11 @@ pets.each_with_index {|pet, index| puts pet if index%2 == 0}
 ```
 
 
-###Comparison with `each.with_index`
+###Comparison with each.with_index
 
 - `each_with_index` came first, `with_index` then followed
 
-- `with_index` is a chainable method which was introduced to allow wider usage with different enumerators
-
-- `with_index` also allows you to pass an optional parameter to offset the starting index:
+- `with_index` allows you to pass an optional parameter to offset the starting index:
 
 ```
 pets.each.with_index(1) {|pet, index| puts "#{pet} is my number #{index} homie"}
@@ -81,12 +79,11 @@ antelope is my number 3 homie
 bacterium is my number 4 homie
 ```
 
-- This is useful for counting like a bona fide human rather than a programmer
+- This is useful for counting like a human rather than a programmer
 
-(Note that this doesn't change the index of each element, it merely adds 1 to the index)
+(Note that this doesn't actually alter the index of elements)
 
-
-###Using with_index
+- `with_index` is a chainable method which allows wider usage with different enumerators
 
 ```
 pets.map.with_index(1).to_a
