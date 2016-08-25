@@ -46,7 +46,8 @@ I love my bacterium
 
 - takes an extra argument (the index) which can then be used inside the block of code passed to it
 
-```pets.each_with_index {|pet,index| puts "My #{pet} is stored in cage number #{index}"}
+```
+pets.each_with_index {|pet,index| puts "My #{pet} is stored in cage number #{index}"}
 
 My cat is stored in cage number 0
 My dog is stored in cage number 1
@@ -86,7 +87,8 @@ bacterium is my number 4 homie
 
 ###Using with_index
 
-`pets.map.with_index(1).to_a
+```
+pets.map.with_index(1).to_a
 
 => [[:cat, 1], [:dog, 2], [:antelope, 3], [:bacterium, 4]]
 ```
