@@ -11,6 +11,7 @@
 `> Enumerable.instance_methods.sort
  => [:all?, :any?, :chunk, :chunk_while, :collect, :collect_concat, :count, :cycle, :detect, :drop, :drop_while, :each_cons, :each_entry, :each_slice, :each_with_index, :each_with_object, :entries, :find, :find_all, :find_index, :first, :flat_map, :grep, :grep_v, :group_by, :include?, :inject, :lazy, :map, :max, :max_by, :member?, :min, :min_by, :minmax, :minmax_by, :none?, :one?, :partition, :reduce, :reject, :reverse_each, :select, :slice_after, :slice_before, :slice_when, :sort, :sort_by, :take, :take_while, :to_a, :to_h, :zip]`
 
+
 ###Using the each method
 
 ... for completeness only!
@@ -36,24 +37,25 @@ I love my bacterium`
 
 *Woah, slow down there!*
 
+
 ###Show me the numbers!
 
 - `each_with_index` extends the `each` method in providing both a reference to each element in the Array and that element's numerical position (ie its index) in the array
 
 - takes an extra argument (the index) which can then be used inside the block of code passed to it
 
-`pets.each_with_index {|pet,index| puts "My #{pet} is stored in cage number #{index}"}
+`pets.each_with_index {|pet,index| puts "My #{pet} is stored in cage number #{index}"}`
 
-=> My cat is stored in cage number 0
+`My cat is stored in cage number 0
 My dog is stored in cage number 1
 My antelope is stored in cage number 2
 My bacterium is stored in cage number 3`
 
 - can be used for returning all numbered objects:
 
-`pets.each_with_index {|pet, index| puts pet if index%2 == 0}
+`pets.each_with_index {|pet, index| puts pet if index%2 == 0}`
+`[:cat, :antelope]`
 
-=> [:cat, :antelope]`
 
 ###Comparison with `each.with_index`
 
@@ -63,9 +65,9 @@ My bacterium is stored in cage number 3`
 
 - `with_index` also allows you to pass an optional parameter to offset the starting index:
 
-`pets.each.with_index(1) {|pet, index| puts "#{pet} is my number #{index} homie"}
+`pets.each.with_index(1) {|pet, index| puts "#{pet} is my number #{index} homie"}`
 
-=> cat is my number 1 homie
+`cat is my number 1 homie
 dog is my number 2 homie
 antelope is my number 3 homie
 bacterium is my number 4 homie`
@@ -74,8 +76,9 @@ bacterium is my number 4 homie`
 
 (Note that this doesn't change the index of each element, it merely adds 1 to the index)
 
+
 ###Using with_index
 
-`pets.map.with_index(1).to_a
+`pets.map.with_index(1).to_a`
 
-=> [[:cat, 1], [:dog, 2], [:antelope, 3], [:bacterium, 4]]`
+`[[:cat, 1], [:dog, 2], [:antelope, 3], [:bacterium, 4]]`
