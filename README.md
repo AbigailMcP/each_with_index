@@ -1,4 +1,4 @@
-#Some title here - using .each_with_index and .with_index methods
+#Using each_with_index and with_index
 
 ###Enumerables
 
@@ -49,7 +49,7 @@ I love my bacterium
 ```
 pets.each_with_index {|pet,index| puts "My #{pet} is stored in cage number #{index}"}
 
-My cat is stored in cage number 0
+=> My cat is stored in cage number 0
 My dog is stored in cage number 1
 My antelope is stored in cage number 2
 My bacterium is stored in cage number 3
@@ -59,7 +59,8 @@ My bacterium is stored in cage number 3
 
 ```
 pets.each_with_index {|pet, index| puts pet if index%2 == 0}
-[:cat, :antelope]
+
+=> [:cat, :antelope]
 ```
 
 
