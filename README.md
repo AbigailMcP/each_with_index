@@ -83,10 +83,36 @@ bacterium is my number 4 homie
 
 (Note that this doesn't actually alter the index of elements)
 
+###Chaining with_index
+
 - `with_index` is a chainable method which allows wider usage with different enumerators
+
+- adding `with_index` to an enumeration lets you enumerate that enumeration! This means we could `map` the above example instead, as such:
+
+```
+pets.map.with_index(1) {|pet, index| "#{pet} is my number #{index} homie"}
+
+=> ["cat is my number 1 homie", "dog is my number 2 homie", "antelope is my number 3 homie", "bacterium is my number 4 homie"]
+```
+
+- it's also possible to chain the method onto something like `to_a` to achieve the following result:
 
 ```
 pets.map.with_index(1).to_a
 
 => [[:cat, 1], [:dog, 2], [:antelope, 3], [:bacterium, 4]]
 ```
+- or even something *really* useful and *really* readable like this:
+
+```
+pets.map.with_index(1).to_a.sort.each.with_index(1) {|(pet, initial), final| puts "#{pet} moved from cage #{initial} to cage #{final}"}
+
+=> antelope moved from cage 3 to cage 1
+bacterium moved from cage 4 to cage 2
+cat moved from cage 1 to cage 3
+dog moved from cage 2 to cage 4
+```
+
+- `map.with_index` adds the initial position to the Array elements
+- `sort` then sorts them alphabetically
+- `each.with_index` then iterates through each internal Array and compares their initial position to their final!
