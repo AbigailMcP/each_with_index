@@ -60,7 +60,8 @@ My bacterium is stored in cage number 3
 ```
 pets.each_with_index {|pet, index| puts pet if index%2 == 0}
 
-=> [:cat, :antelope]
+=> cat
+antelope
 ```
 
 
@@ -105,7 +106,8 @@ pets.map.with_index(1).to_a
 - or even something *really* useful and *really* readable like this:
 
 ```
-pets.map.with_index(1).to_a.sort.each.with_index(1) {|(pet, initial), final| puts "#{pet} moved from cage #{initial} to cage #{final}"}
+pets.map.with_index(1).to_a.sort.each.with_index(1) {|(pet, initial), final|
+  puts "#{pet} moved from cage #{initial} to cage #{final}"}
 
 => antelope moved from cage 3 to cage 1
 bacterium moved from cage 4 to cage 2
